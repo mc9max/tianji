@@ -1,0 +1,23 @@
+{
+  "name": "tianji",
+  "version": "1.0.0",
+  "description": "Website analytics + uptime monitor + server status, in one dashboard. Not only another Google Analytics alternative — Tianji gives you real-time visitor tracking, uptime monitoring, and server health metrics in a single self-hosted platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mc9max/tianji.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mc9max/tianji/issues"
+  },
+  "homepage": "https://github.com/mc9max/tianji#readme",
+  "dependencies": {
+    "railway": "^3.11.0"
+  }
+}

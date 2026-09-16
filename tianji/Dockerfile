@@ -17,10 +17,10 @@ FROM moonrailgun/tianji:1.32.38
 
 USER root
 
-EXPOSE 12345
+EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=5 \
-  CMD curl -sf http://localhost:12345/health || exit 1
+  CMD curl -sf http://localhost:8080/health || exit 1
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
