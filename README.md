@@ -67,7 +67,7 @@ The deploy form pre-fills all companion variables (DB host / name / user / passw
 
 ## Health Checks
 
-- Tianji: `GET /health` on port 12345
+- Tianji: `GET /health` on port 8080
 - PostgreSQL: Built-in `pg_isready` check
 
 ## License
