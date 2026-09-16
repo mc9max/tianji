@@ -1,7 +1,7 @@
 {
   "POSTGRES_USER": {
-    "value": "tianji",
-    "description": "Application database user for Tianji."
+    "value": "postgres",
+    "description": "PostgreSQL superuser. The official postgres image requires the default superuser to be 'postgres' — setting a custom user breaks startup scripts that connect as 'postgres'."
   },
   "POSTGRES_PASSWORD": {
     "value": "${{secret(16)}}",
@@ -12,8 +12,8 @@
     "description": "Name of the application database."
   },
   "PGDATA": {
-    "value": "/var/lib/postgresql/data",
-    "description": "PostgreSQL data directory (volume mount point)."
+    "value": "/var/lib/postgresql/data/pgdata",
+    "description": "Must be a subdirectory of the volume mount point. Railway volumes contain lost+found, and initdb refuses to initialize when the mount point itself is used directly."
   },
   "RAILWAY_RUN_UID": {
     "value": "0",

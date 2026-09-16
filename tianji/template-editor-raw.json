@@ -20,8 +20,8 @@
     "description": "Automatically wired from the PostgreSQL companion service."
   },
   "DATABASE_URL": {
-    "value": "",
-    "description": "Optional \u2014 a full PostgreSQL connection string. Leave empty to auto-compose from the PG* vars above (recommended). If set, this takes precedence over the component vars."
+    "value": "postgresql://${{postgres.POSTGRES_USER}}:${{postgres.POSTGRES_PASSWORD}}@${{postgres.RAILWAY_PRIVATE_DOMAIN}}:${{postgres.RAILWAY_PRIVATE_PORT}}/${{postgres.POSTGRES_DB}}",
+    "description": "PostgreSQL connection string, auto-composed from the companion postgres service variables. Do not hardcode credentials."
   },
   "JWT_SECRET": {
     "value": "${{secret(32)}}",
