@@ -1,0 +1,24 @@
+{
+  "postgres": {
+    "POSTGRES_USER": {
+      "value": "tianji",
+      "description": "Application database user."
+    },
+    "POSTGRES_PASSWORD": {
+      "value": "${{secret(16)}}",
+      "description": "Auto-generated password."
+    },
+    "POSTGRES_DB": {
+      "value": "tianji",
+      "description": "Application database name."
+    },
+    "PGDATA": {
+      "value": "/var/lib/postgresql/data",
+      "description": "PostgreSQL data directory."
+    },
+    "RAILWAY_RUN_UID": {
+      "value": "0",
+      "description": "REQUIRED \u2014 run as root for Railway volume compatibility."
+    }
+  }
+}

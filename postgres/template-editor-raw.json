@@ -1,0 +1,22 @@
+{
+  "POSTGRES_USER": {
+    "value": "tianji",
+    "description": "Application database user for Tianji."
+  },
+  "POSTGRES_PASSWORD": {
+    "value": "${{secret(16)}}",
+    "description": "Auto-generated password for the application database user."
+  },
+  "POSTGRES_DB": {
+    "value": "tianji",
+    "description": "Name of the application database."
+  },
+  "PGDATA": {
+    "value": "/var/lib/postgresql/data",
+    "description": "PostgreSQL data directory (volume mount point)."
+  },
+  "RAILWAY_RUN_UID": {
+    "value": "0",
+    "description": "REQUIRED \u2014 run the container as root (uid 0). The official postgres image runs as uid 999, but Railway mounts the data volume root-owned, so a non-root process cannot write to it and crash-loops. Setting 0 boots every fresh install cleanly."
+  }
+}

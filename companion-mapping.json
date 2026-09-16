@@ -1,0 +1,101 @@
+{
+  "tianji": {
+    "PGHOST": {
+      "value": "${{postgres.RAILWAY_PRIVATE_DOMAIN}}",
+      "description": "Automatically wired from the PostgreSQL companion service (private domain)."
+    },
+    "PGPORT": {
+      "value": "${{postgres.RAILWAY_PRIVATE_PORT}}",
+      "description": "Automatically wired from the PostgreSQL companion service (private port)."
+    },
+    "PGUSER": {
+      "value": "${{postgres.POSTGRES_USER}}",
+      "description": "Automatically wired from the PostgreSQL companion service."
+    },
+    "PGPASSWORD": {
+      "value": "${{postgres.POSTGRES_PASSWORD}}",
+      "description": "Automatically wired from the PostgreSQL companion service."
+    },
+    "PGDATABASE": {
+      "value": "${{postgres.POSTGRES_DB}}",
+      "description": "Automatically wired from the PostgreSQL companion service."
+    },
+    "DATABASE_URL": {
+      "value": "",
+      "description": "Optional \u2014 overrides the auto-composed connection string."
+    },
+    "JWT_SECRET": {
+      "value": "${{secret(32)}}",
+      "description": "REQUIRED \u2014 random string for JWT signing."
+    },
+    "ALLOW_REGISTER": {
+      "value": "false",
+      "description": "Optional \u2014 allow new user registration."
+    },
+    "ALLOW_OPENAPI": {
+      "value": "true",
+      "description": "Optional \u2014 expose OpenAPI docs."
+    },
+    "PUBLIC_URL": {
+      "value": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
+      "description": "Optional \u2014 public URL, auto-filled from domain."
+    },
+    "WEBSITE_ID": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 website ID for self-tracking."
+    },
+    "JWT_ISSUER": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 JWT issuer claim."
+    },
+    "JWT_AUDIENCE": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 JWT audience claim."
+    },
+    "CLICKHOUSE_URL": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 ClickHouse connection URL."
+    },
+    "CLICKHOUSE_USER": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 ClickHouse username."
+    },
+    "CLICKHOUSE_PASSWORD": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 ClickHouse password."
+    },
+    "CLICKHOUSE_DATABASE": {
+      "value": "",
+      "isOptional": true,
+      "description": "Optional \u2014 ClickHouse database name."
+    }
+  },
+  "postgres": {
+    "POSTGRES_USER": {
+      "value": "tianji",
+      "description": "Application database user."
+    },
+    "POSTGRES_PASSWORD": {
+      "value": "${{secret(16)}}",
+      "description": "Auto-generated password."
+    },
+    "POSTGRES_DB": {
+      "value": "tianji",
+      "description": "Application database name."
+    },
+    "PGDATA": {
+      "value": "/var/lib/postgresql/data",
+      "description": "PostgreSQL data directory."
+    },
+    "RAILWAY_RUN_UID": {
+      "value": "0",
+      "description": "REQUIRED \u2014 run as root for Railway volume compatibility."
+    }
+  }
+}

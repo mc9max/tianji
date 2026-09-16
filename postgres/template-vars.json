@@ -1,0 +1,7 @@
+{
+  "POSTGRES_USER": "tianji",
+  "POSTGRES_PASSWORD": "${{secret(16)}}",
+  "POSTGRES_DB": "tianji",
+  "PGDATA": "/var/lib/postgresql/data",
+  "RAILWAY_RUN_UID": "0"
+}

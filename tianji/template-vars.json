@@ -1,0 +1,19 @@
+{
+  "PGHOST": "${{postgres.RAILWAY_PRIVATE_DOMAIN}}",
+  "PGPORT": "${{postgres.RAILWAY_PRIVATE_PORT}}",
+  "PGUSER": "${{postgres.POSTGRES_USER}}",
+  "PGPASSWORD": "${{postgres.POSTGRES_PASSWORD}}",
+  "PGDATABASE": "${{postgres.POSTGRES_DB}}",
+  "DATABASE_URL": "",
+  "JWT_SECRET": "${{secret(32)}}",
+  "ALLOW_REGISTER": "false",
+  "ALLOW_OPENAPI": "true",
+  "PUBLIC_URL": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
+  "WEBSITE_ID": "",
+  "JWT_ISSUER": "",
+  "JWT_AUDIENCE": "",
+  "CLICKHOUSE_URL": "",
+  "CLICKHOUSE_USER": "",
+  "CLICKHOUSE_PASSWORD": "",
+  "CLICKHOUSE_DATABASE": ""
+}

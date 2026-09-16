@@ -1,0 +1,70 @@
+{
+  "PGHOST": {
+    "value": "${{postgres.RAILWAY_PRIVATE_DOMAIN}}",
+    "description": "Automatically wired from the PostgreSQL companion service (private domain). The entrypoint composes DATABASE_URL from this and the other PG* vars."
+  },
+  "PGPORT": {
+    "value": "${{postgres.RAILWAY_PRIVATE_PORT}}",
+    "description": "Automatically wired from the PostgreSQL companion service (private port)."
+  },
+  "PGUSER": {
+    "value": "${{postgres.POSTGRES_USER}}",
+    "description": "Automatically wired from the PostgreSQL companion service."
+  },
+  "PGPASSWORD": {
+    "value": "${{postgres.POSTGRES_PASSWORD}}",
+    "description": "Automatically wired from the PostgreSQL companion service."
+  },
+  "PGDATABASE": {
+    "value": "${{postgres.POSTGRES_DB}}",
+    "description": "Automatically wired from the PostgreSQL companion service."
+  },
+  "DATABASE_URL": {
+    "value": "",
+    "description": "Optional \u2014 a full PostgreSQL connection string. Leave empty to auto-compose from the PG* vars above (recommended). If set, this takes precedence over the component vars."
+  },
+  "JWT_SECRET": {
+    "value": "${{secret(32)}}",
+    "description": "REQUIRED \u2014 a random string used to sign JWT tokens. This placeholder auto-generates one for you. Do not reuse an existing secret."
+  },
+  "ALLOW_REGISTER": {
+    "value": "false",
+    "description": "Optional \u2014 whether to allow new user registration. Set to 'true' to allow sign-ups, 'false' (default) to disable after initial setup."
+  },
+  "ALLOW_OPENAPI": {
+    "value": "true",
+    "description": "Optional \u2014 whether to expose the OpenAPI documentation endpoint. Defaults to 'true'."
+  },
+  "PUBLIC_URL": {
+    "value": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
+    "description": "Optional \u2014 the public URL of this Tianji instance. Auto-filled from the service's public domain. Override if using a custom domain."
+  },
+  "WEBSITE_ID": {
+    "value": "",
+    "description": "Optional \u2014 UUID of a pre-created website to track this Tianji instance itself. Leave empty to skip self-tracking."
+  },
+  "JWT_ISSUER": {
+    "value": "",
+    "description": "Optional \u2014 JWT issuer claim. Defaults to 'tianji.msgbyte.com' if empty."
+  },
+  "JWT_AUDIENCE": {
+    "value": "",
+    "description": "Optional \u2014 JWT audience claim. Defaults to 'msgbyte.com' if empty."
+  },
+  "CLICKHOUSE_URL": {
+    "value": "",
+    "description": "Optional \u2014 ClickHouse connection URL for analytics storage. Leave empty to use the default PostgreSQL-backed analytics."
+  },
+  "CLICKHOUSE_USER": {
+    "value": "",
+    "description": "Optional \u2014 ClickHouse username. Only used when CLICKHOUSE_URL is set."
+  },
+  "CLICKHOUSE_PASSWORD": {
+    "value": "",
+    "description": "Optional \u2014 ClickHouse password. Only used when CLICKHOUSE_URL is set."
+  },
+  "CLICKHOUSE_DATABASE": {
+    "value": "",
+    "description": "Optional \u2014 ClickHouse database name. Only used when CLICKHOUSE_URL is set."
+  }
+}
