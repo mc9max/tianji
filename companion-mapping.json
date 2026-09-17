@@ -4,10 +4,6 @@
       "value": "${{postgres.RAILWAY_PRIVATE_DOMAIN}}",
       "description": "Automatically wired from the PostgreSQL companion service (private domain)."
     },
-    "PGPORT": {
-      "value": "${{postgres.RAILWAY_PRIVATE_PORT}}",
-      "description": "Automatically wired from the PostgreSQL companion service (private port)."
-    },
     "PGUSER": {
       "value": "${{postgres.POSTGRES_USER}}",
       "description": "Automatically wired from the PostgreSQL companion service."

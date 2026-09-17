@@ -1,11 +1,7 @@
 {
   "PGHOST": {
     "value": "${{postgres.RAILWAY_PRIVATE_DOMAIN}}",
-    "description": "Automatically wired from the PostgreSQL companion service (private domain). The entrypoint composes DATABASE_URL from this and the other PG* vars."
-  },
-  "PGPORT": {
-    "value": "${{postgres.RAILWAY_PRIVATE_PORT}}",
-    "description": "Automatically wired from the PostgreSQL companion service (private port)."
+    "description": "Automatically wired from the PostgreSQL companion service (private domain). The entrypoint composes DATABASE_URL from this and the other PG* vars, defaulting to port 5432."
   },
   "PGUSER": {
     "value": "${{postgres.POSTGRES_USER}}",
@@ -20,8 +16,8 @@
     "description": "Automatically wired from the PostgreSQL companion service."
   },
   "DATABASE_URL": {
-    "value": "postgresql://${{postgres.POSTGRES_USER}}:${{postgres.POSTGRES_PASSWORD}}@${{postgres.RAILWAY_PRIVATE_DOMAIN}}:${{postgres.RAILWAY_PRIVATE_PORT}}/${{postgres.POSTGRES_DB}}",
-    "description": "PostgreSQL connection string, auto-composed from the companion postgres service variables. Do not hardcode credentials."
+    "value": "postgresql://${{postgres.POSTGRES_USER}}:${{postgres.POSTGRES_PASSWORD}}@${{postgres.RAILWAY_PRIVATE_DOMAIN}}/${{postgres.POSTGRES_DB}}",
+    "description": "PostgreSQL connection string composed from companion postgres refs. No port segment: Railway private networking for Postgres always listens on 5432 (the client default)."
   },
   "JWT_SECRET": {
     "value": "${{secret(32)}}",
@@ -37,34 +33,34 @@
   },
   "PUBLIC_URL": {
     "value": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
-    "description": "Optional \u2014 the public URL of this Tianji instance. Auto-filled from the service's public domain. Override if using a custom domain."
+    "description": "Optional \u2014 the public URL of this Tianji instance, auto-filled from the Railway domain."
   },
   "WEBSITE_ID": {
     "value": "",
-    "description": "Optional \u2014 UUID of a pre-created website to track this Tianji instance itself. Leave empty to skip self-tracking."
+    "description": "Optional \u2014 website ID for Tianji's own analytics self-tracking."
   },
   "JWT_ISSUER": {
     "value": "",
-    "description": "Optional \u2014 JWT issuer claim. Defaults to 'tianji.msgbyte.com' if empty."
+    "description": "Optional \u2014 JWT issuer claim."
   },
   "JWT_AUDIENCE": {
     "value": "",
-    "description": "Optional \u2014 JWT audience claim. Defaults to 'msgbyte.com' if empty."
+    "description": "Optional \u2014 JWT audience claim."
   },
   "CLICKHOUSE_URL": {
     "value": "",
-    "description": "Optional \u2014 ClickHouse connection URL for analytics storage. Leave empty to use the default PostgreSQL-backed analytics."
+    "description": "Optional \u2014 ClickHouse HTTP endpoint for tianji's survey/telemetry backend, e.g. http://clickhouse:8123. Leave empty to skip ClickHouse migrations."
   },
   "CLICKHOUSE_USER": {
     "value": "",
-    "description": "Optional \u2014 ClickHouse username. Only used when CLICKHOUSE_URL is set."
+    "description": "Optional \u2014 ClickHouse user."
   },
   "CLICKHOUSE_PASSWORD": {
     "value": "",
-    "description": "Optional \u2014 ClickHouse password. Only used when CLICKHOUSE_URL is set."
+    "description": "Optional \u2014 ClickHouse password."
   },
   "CLICKHOUSE_DATABASE": {
     "value": "",
-    "description": "Optional \u2014 ClickHouse database name. Only used when CLICKHOUSE_URL is set."
+    "description": "Optional \u2014 ClickHouse database name."
   }
 }

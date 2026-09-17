@@ -45,9 +45,9 @@ The deploy form pre-fills all companion variables (DB host / name / user / passw
 
 **After the first successful deploy:**
 
-1. Open `https://<your-domain>` — the Tianji dashboard
+1. Open your Railway public domain — the Tianji dashboard
 2. Create your first workspace and website to start tracking
-3. Add the tracking script to your website's `<head>` section
+3. Add the tracking script to your website's head section
 4. (Optional) Deploy the Tianji reporter agent to your servers for infrastructure monitoring
 
 ### Environment Variables

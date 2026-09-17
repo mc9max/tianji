@@ -1,10 +1,9 @@
 {
   "PGHOST": "${{postgres.RAILWAY_PRIVATE_DOMAIN}}",
-  "PGPORT": "${{postgres.RAILWAY_PRIVATE_PORT}}",
   "PGUSER": "${{postgres.POSTGRES_USER}}",
   "PGPASSWORD": "${{postgres.POSTGRES_PASSWORD}}",
   "PGDATABASE": "${{postgres.POSTGRES_DB}}",
-  "DATABASE_URL": "postgresql://${{postgres.POSTGRES_USER}}:${{postgres.POSTGRES_PASSWORD}}@${{postgres.RAILWAY_PRIVATE_DOMAIN}}:${{postgres.RAILWAY_PRIVATE_PORT}}/${{postgres.POSTGRES_DB}}",
+  "DATABASE_URL": "postgresql://${{postgres.POSTGRES_USER}}:${{postgres.POSTGRES_PASSWORD}}@${{postgres.RAILWAY_PRIVATE_DOMAIN}}/${{postgres.POSTGRES_DB}}",
   "JWT_SECRET": "${{secret(32)}}",
   "ALLOW_REGISTER": "false",
   "ALLOW_OPENAPI": "true",
