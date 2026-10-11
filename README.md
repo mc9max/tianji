@@ -8,7 +8,7 @@ Two services: Tianji (web app) + PostgreSQL (database).
 
 Host your own Tianji on Railway. This template provisions the all-in-one Tianji container (website analytics, uptime monitoring, server status reporting) and a PostgreSQL companion for persistence. All data persists in a Railway volume at `/var/lib/postgresql/data`.
 
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/tianji-1)
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/tianji-fix-verify3)
 
 ## About Hosting
 
